@@ -1,0 +1,23 @@
+{
+  "name": "bbtest",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.html",
+  "devDependencies": {
+    "node-sass": "^7.0.3",
+    "style-dictionary": "^3.7.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakep85/bbtest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jakep85/bbtest/issues"
+  },
+  "homepage": "https://github.com/jakep85/bbtest#readme"
+}
