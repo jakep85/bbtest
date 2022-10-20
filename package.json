@@ -5,10 +5,16 @@
   "main": "index.html",
   "devDependencies": {
     "node-sass": "^7.0.3",
-    "style-dictionary": "^3.7.1"
+    "npm-watch": "^0.11.0",
+    "style-dictionary": "^3.7.1",
+    "token-transformer": "^0.0.27"
+  },
+  "watch": {
+    "build": "tokens/*.json"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node node_modules/token-transformer tokens/tokens.json token-convert/converted.json Default excludes tokenSetOrder --expandTypography=true --expandShadow=true --resolveReferences=false && style-dictionary build",
+    "watch": "npm-watch"
   },
   "repository": {
     "type": "git",
