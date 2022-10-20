@@ -1,0 +1,14 @@
+@mixin shadow-subtle-md(
+  $x0: $shadow-subtle-md-0-x + px,
+  $y0: $shadow-subtle-md-0-y + px,
+  $blur0: $shadow-subtle-md-0-blur + px,
+  $spread0: $shadow-subtle-md-0-spread + px,
+  $color0: $shadow-subtle-md-0-color,
+  $x1: $shadow-subtle-md-1-x + px,
+  $y1: $shadow-subtle-md-1-y + px,
+  $blur1: $shadow-subtle-md-1-blur + px,
+  $spread1: $shadow-subtle-md-1-spread + px,
+  $color1: $shadow-subtle-md-1-color
+) {
+  box-shadow: $x0 $y0 $blur0 $spread0 $color0, $x1 $y1 $blur1 $spread1 $color1;
+}

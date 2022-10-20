@@ -1,7 +1,10 @@
-@import 'colors';
+@import 'util/normalize';
+@import '../../build/scss/variables';
+@import 'helpers/shadow';
+@import 'components/buttons';
+@import 'components/cards';
 
 h1 {
   color: red;
   color: $main-h1-color;
-  border: 3px solid magenta;
 }

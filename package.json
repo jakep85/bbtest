@@ -10,13 +10,23 @@
     "token-transformer": "^0.0.27"
   },
   "watch": {
-    "build": "tokens/*.json",
-    "sass:compile": "src/scss/main.scss"
+    "build": {
+      "patterns": [
+        "tokens"
+      ],
+      "extensions": "json"
+    },
+    "sass:compile": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "scss"
+    }
   },
   "scripts": {
     "build": "node node_modules/token-transformer tokens/tokens.json token-convert/converted.json Default excludes tokenSetOrder --expandTypography=true --expandShadow=true --resolveReferences=false && style-dictionary build",
     "watch": "npm-watch",
-    "sass:compile": "node-sass -w src/scss/main.scss build/css/main.css"
+    "sass:compile": "node-sass --output-style compressed src/scss/main.scss build/css/main.css"
   },
   "repository": {
     "type": "git",
