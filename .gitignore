@@ -35,6 +35,6 @@ Temporary Items
 *.icloud
 
 # Project
-/build
+build/**/*.*
 
 # End of https://www.toptal.com/developers/gitignore/api/macos
