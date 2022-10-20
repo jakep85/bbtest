@@ -1,0 +1,7 @@
+@import 'colors';
+
+h1 {
+  color: red;
+  color: $main-h1-color;
+  border: 3px solid magenta;
+}
