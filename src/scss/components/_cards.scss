@@ -1,18 +1,32 @@
 /*
-BLOCK Card (3 main elements)
+BLOCK Card
+
+(3 main ELEMENTS)
   - Header: logo, features
   - Body: journey start, journey  end
   - Footer: details, action
+
+(2 main MODIFIERS)
+  - top panel
+  - bottom panel
 */
 .bb-card {
   display: flex;
   flex-direction: column;
   min-width: 360px;
   min-height: 202px;
-  background-color: $color-background-primary;
-  border: 1px solid $color-background-secondary-translucent;
-  border-radius: $border-radius-xl;
   @include shadow(subtle-md);
+
+  // MODIFIER - top panel
+  // modifiers can have different formats like "has-top-panel" or "contains-multiple-options"
+  &--top-panel {
+  }
+
+  &__inner {
+    background-color: $color-background-primary;
+    border: 1px solid $color-background-secondary-translucent;
+    border-radius: $border-radius-xl;
+  }
 
   // Card common
   &__icon {
@@ -105,6 +119,12 @@ BLOCK Card (3 main elements)
     color: $color-text-primary;
   }
 
+  &__journey-date {
+    @include font(label-md-regular);
+    color: $color-text-tertiary;
+    margin-top: $space-scale-2;
+  }
+
   &__journey-station {
     /*
       I didn't see specs for alternate cards when date is under the time. Spacing looks slightly larger for station
@@ -158,6 +178,9 @@ BLOCK Card (3 main elements)
 
   // Footer - details, action
   &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-top: $space-scale-20;
   }
 
@@ -186,5 +209,14 @@ BLOCK Card (3 main elements)
     .bb-card__icon {
       margin-right: $space-inline-xxs;
     }
+  }
+
+  &__details-label {
+    @include font(label-md-regular);
+    color: $color-text-tertiary;
+  }
+
+  &__action {
+    padding: 0 $space-scale-8 $space-scale-8 0;
   }
 }

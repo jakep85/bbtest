@@ -14,10 +14,38 @@ body {
   background-color: $color-neutral-next-100;
 }
 
-.container {
-  padding: 100px 0;
+.bb-container {
+  padding: 50px;
 }
 
 img {
   max-height: 100%;
+}
+
+// Test page layout - manual stuff
+h1,
+h2,
+p {
+  font-family: 'Codec Pro';
+  color: $color-global-blue-accent-500;
+}
+
+h1,
+h2 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 36px;
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 20px;
+  margin-top: 50px;
+}
+
+p {
+  font-size: 16px;
 }
