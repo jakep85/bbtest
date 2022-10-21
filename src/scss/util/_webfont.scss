@@ -10,10 +10,11 @@ $weights: (
 // Filepath and name
 $font-path: '/build/fonts/';
 $font-filename: 'codec-pro';
+$font-family-name: 'Codec Pro';
 
 @each $name, $weight in $weights {
   @font-face {
-    font-family: $font-filename;
+    font-family: $font-family-name;
     src: url($font-path + $font-filename + '-' + $name + '.woff2') format('woff2'),
       url($font-path + $font-filename + '-' + $name + '.woff') format('woff'),
       url($font-path + $font-filename + '-' + $name + '.ttf') format('truetype');

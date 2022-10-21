@@ -22,9 +22,9 @@ BLOCK Card (3 main elements)
       If inline SVG we can change color like below.
       NPM package can combine SVGs from a folder into SVG sprite with <use>, but a bit more limited on CSS control
       
-      Added width and height here and svg to fill below because looks like Figma clock linked to 32x32 file
+      Added width and height here and svg to fill below because looks like Figma clock linked to 32x32 icon SVG
       Yes could adjust the width and height in SVG markup manually, but if this is missed then icons in this
-      componend are not consistant
+      component are not consistant.
     */
     width: 24px;
     height: 24px;
@@ -162,6 +162,29 @@ BLOCK Card (3 main elements)
   }
 
   &__details {
+    display: flex;
+    align-items: center;
     padding: $space-scale-8 0 $space-scale-16 $space-scale-16;
+  }
+
+  &__details-item {
+    display: flex;
+    align-items: center;
+    // When should I be using "space-inline" vs "space-scale"?
+    margin-right: $space-inline-lg;
+
+    /*
+      A few different ways to handle this.
+        - Have a utility class for margin right add to markup eg. "bb-u-margin-right-xxs"
+        - Since this icon is modified could use BEM modifier up in the common area above 
+          and use "&--details" to create a class like "bb-card__icon--details" to add to the markup
+        - Make the icon 'self aware' by putting ".bb-card__details-item & { spacing here }" this
+          would mean whenever the icon has a parent class of above, it would add extra spacing
+        - Decided to go with below approach to keep everything relating to the details section in the
+          one spot and easier to read/manage
+    */
+    .bb-card__icon {
+      margin-right: $space-inline-xxs;
+    }
   }
 }
