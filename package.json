@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "main": "index.html",
   "devDependencies": {
+    "del-cli": "^5.0.0",
+    "flexboxgrid": "^6.3.1",
+    "imagemin-cli": "^7.0.0",
     "node-sass": "^7.0.3",
     "npm-watch": "^0.11.0",
     "style-dictionary": "^3.7.1",
@@ -21,12 +24,20 @@
         "src"
       ],
       "extensions": "scss"
+    },
+    "imagemin": {
+      "patterns": [
+        "src/images"
+      ],
+      "extensions": "png,jpg,jpeg,svg,gif,webp"
     }
   },
   "scripts": {
-    "build": "node node_modules/token-transformer tokens/tokens.json token-convert/converted.json Default excludes tokenSetOrder --expandTypography=true --expandShadow=true --resolveReferences=false && style-dictionary build",
+    "clean": "del build/images/*",
     "watch": "npm-watch",
-    "sass:compile": "node-sass --output-style compressed src/scss/main.scss build/css/main.css"
+    "sass:compile": "node-sass --output-style compressed src/scss/main.scss build/css/main.css",
+    "imagemin": "npm run clean && imagemin src/images/* --out-dir=build/images",
+    "build": "node node_modules/token-transformer tokens/tokens.json token-convert/converted.json Default excludes tokenSetOrder --expandTypography=true --expandShadow=true --resolveReferences=false && style-dictionary build"
   },
   "repository": {
     "type": "git",
