@@ -15,11 +15,79 @@ BLOCK Card
   flex-direction: column;
   min-width: 360px;
   min-height: 202px;
+  border-radius: $border-radius-xl;
   @include shadow(subtle-md);
 
   // MODIFIER - top panel
   // modifiers can have different formats like "has-top-panel" or "contains-multiple-options"
   &--top-panel {
+    background-color: $color-background-positive;
+    border: 1px solid $color-border-positive;
+
+    .bb-card__inner {
+      border: 0;
+    }
+  }
+
+  &__top-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $space-scale-8 0;
+
+    .bb-card__icon {
+      margin-right: $space-scale-2;
+    }
+  }
+
+  &__top-text {
+    @include font(label-sm-bold);
+    color: $color-global-green-muted-700;
+  }
+
+  // MODIFIER - bottom panel
+  &--bottom-panel {
+    background-color: $color-global-blue-regular-50;
+    border: 1px solid $color-border-informative;
+
+    .bb-card__inner {
+      border: 0;
+      @include shadow(subtle-sm);
+    }
+  }
+
+  &__bottom-panel {
+    display: flex;
+    flex-direction: column;
+
+    .bb-card__icon {
+      margin-right: $space-scale-4;
+    }
+
+    hr {
+      // Instead of figuring out what to reverse since I don't want anything just us "all: unset;"
+      all: unset;
+      border-bottom: 1px solid $color-border-informative-transparent;
+      margin-left: $space-scale-16;
+    }
+  }
+
+  &__bottom-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $space-scale-8 $space-scale-8 $space-scale-8 $space-scale-20;
+  }
+
+  &__bottom-info {
+    display: flex;
+    align-items: center;
+  }
+
+  &__bottom-text {
+    @include font(label-lg-bold);
+    color: $color-text-primary;
+    margin-right: $space-scale-8;
   }
 
   &__inner {
@@ -218,5 +286,14 @@ BLOCK Card
 
   &__action {
     padding: 0 $space-scale-8 $space-scale-8 0;
+  }
+
+  &__options {
+    padding: $space-scale-8 $space-scale-16 $space-scale-16 0;
+  }
+
+  &__options-text {
+    @include font(label-md-bold);
+    color: $color-text-tertiary;
   }
 }

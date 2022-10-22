@@ -14,15 +14,19 @@ body {
   background-color: $color-neutral-next-100;
 }
 
-.bb-container {
-  padding: 50px;
-}
-
 img {
   max-height: 100%;
 }
 
 // Test page layout - manual stuff
+.bb-container {
+  padding: 2vw 2vw 10vw;
+
+  @include sm {
+    padding: 5vw 5vw 10vw;
+  }
+}
+
 h1,
 h2,
 p {

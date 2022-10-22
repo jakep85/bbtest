@@ -74,3 +74,19 @@
     fill: $color-icon-primary;
   }
 }
+
+.bb-chip-blue-lg-subtle {
+  @include base-lg-chip;
+  color: $color-global-blue-muted-700;
+  background-color: $color-background-informative-transparent;
+
+  /* 
+    Looks like for default blue any icons inside have the same color "icon primary" BUT in component 
+    library and specs there is a color mask
+    TODO: talk to UX about usage of color masks and blend modes (all tokens should be coming from main design tokens)
+  */
+  svg {
+    // fill: $color-icon-primary;
+    fill: $color-global-blue-accent-500;
+  }
+}
