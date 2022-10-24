@@ -37,7 +37,7 @@
     "watch": "npm-watch",
     "sass:compile": "node-sass --output-style compressed src/scss/main.scss build/css/main.css",
     "imagemin": "npm run clean && imagemin src/images/* --out-dir=build/images",
-    "build": "node node_modules/token-transformer tokens/tokens.json token-convert/converted.json Default excludes tokenSetOrder --expandTypography=true --expandShadow=true --resolveReferences=false && style-dictionary build"
+    "build": "node node_modules/token-transformer tokens/tokens.json token-convert/converted.json Default excludes tokenSetOrder --expandTypography=true --expandShadow=true --resolveReferences=false && style-dictionary build && npm run sass:compile"
   },
   "repository": {
     "type": "git",

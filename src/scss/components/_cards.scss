@@ -9,6 +9,12 @@ BLOCK Card
 (2 main MODIFIERS)
   - top panel
   - bottom panel
+
+  Additional notes: 
+  Currently all elements are part of this one card.
+  If things such as "journey" or "footer" (transport type icon, time, passengers)
+  need to be used in different components (not in the card) they could be split out as seperate blocks
+  eg. "bb-journey" or "bb-journey-details"
 */
 .bb-card {
   display: flex;
@@ -19,7 +25,8 @@ BLOCK Card
   @include shadow(subtle-md);
 
   // MODIFIER - top panel
-  // modifiers can have different formats like "has-top-panel" or "contains-multiple-options"
+  // modifiers can have different formats like "has-top-panel" or "contains-multiple-options".
+  // Normally I save this naming for state classes eg. for a menu "is-expanded"
   &--top-panel {
     background-color: $color-background-positive;
     border: 1px solid $color-border-positive;
